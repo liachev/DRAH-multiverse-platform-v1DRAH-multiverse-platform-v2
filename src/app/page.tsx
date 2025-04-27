@@ -1,0 +1,94 @@
+import Link from 'next/link'
+
+export default function Home() {
+  return (
+    <>
+      {/* Hero Section */}
+      <section className="w-full py-12 bg-blue-600 text-white">
+        <div className="container mx-auto px-6 text-center">
+          <h1 className="text-4xl font-bold mb-4">Multiverse Platform for Real Estate Solutions</h1>
+          <p className="text-xl mb-8">Bridging the gap between virtual and physical real estate markets</p>
+          <div className="flex justify-center space-x-4">
+            <Link href="/properties" className="bg-white text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100">
+              Browse Properties
+            </Link>
+            <Link href="/contact" className="bg-transparent border-2 border-white text-white px-6 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-600">
+              Contact Us
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Services Section */}
+      <section className="w-full py-12">
+        <div className="container mx-auto px-6">
+          <h2 className="text-3xl font-bold text-center mb-8">Our Services</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="bg-white p-6 rounded-lg shadow-md">
+              <h3 className="text-xl font-bold mb-4">Real Estate Marketplace</h3>
+              <p className="text-gray-600 mb-4">Discover properties in both physical and virtual worlds with our comprehensive marketplace.</p>
+              <Link href="/properties" className="text-blue-600 hover:text-blue-800">Learn More →</Link>
+            </div>
+            <div className="bg-white p-6 rounded-lg shadow-md">
+              <h3 className="text-xl font-bold mb-4">Property Auctions</h3>
+              <p className="text-gray-600 mb-4">Participate in transparent and competitive auctions for exclusive real estate opportunities.</p>
+              <Link href="/auctions" className="text-blue-600 hover:text-blue-800">Learn More →</Link>
+            </div>
+            <div className="bg-white p-6 rounded-lg shadow-md">
+              <h3 className="text-xl font-bold mb-4">Business Solutions</h3>
+              <p className="text-gray-600 mb-4">Comprehensive tools for real estate professionals, investors, and businesses.</p>
+              <Link href="/business" className="text-blue-600 hover:text-blue-800">Learn More →</Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Featured Properties */}
+      <section className="w-full py-12 bg-gray-100">
+        <div className="container mx-auto px-6">
+          <h2 className="text-3xl font-bold text-center mb-8">Featured Properties</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {[1, 2, 3].map((item) => (
+              <div key={item} className="bg-white rounded-lg overflow-hidden shadow-md">
+                <div className="h-48 bg-gray-300 relative">
+                  {/* Placeholder for property image */}
+                  <div className="absolute inset-0 flex items-center justify-center text-gray-500">
+                    Property Image {item}
+                  </div>
+                </div>
+                <div className="p-6">
+                  <h3 className="text-xl font-bold mb-2">Modern Property {item}</h3>
+                  <p className="text-gray-700 mb-2">123 Example Street, City</p>
+                  <p className="text-blue-600 font-bold mb-4">$499,000</p>
+                  <div className="flex justify-between text-sm text-gray-600">
+                    <span>3 Beds</span>
+                    <span>2 Baths</span>
+                    <span>1,500 sqft</span>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+          <div className="text-center mt-8">
+            <Link href="/properties" className="bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700">
+              View All Properties
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Call to Action */}
+      <section className="w-full py-12 bg-blue-800 text-white">
+        <div className="container mx-auto px-6 text-center">
+          <h2 className="text-3xl font-bold mb-4">Ready to Get Started?</h2>
+          <p className="text-xl mb-8 max-w-2xl mx-auto">
+            Whether you&apos;re looking for property, financing, construction services, or business solutions, we&apos;re here to help.
+          </p>
+          <Link href="/contact" className="bg-white text-blue-800 px-8 py-4 rounded-lg font-bold hover:bg-gray-100">
+            Contact Us Today
+          </Link>
+        </div>
+      </section>
+    </>
+  )
+}
